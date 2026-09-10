@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" fill="none">
+  <rect width="400" height="500" fill="#FCECEF"/>
+  <rect x="30" y="40" width="340" height="420" rx="4" fill="#FFF" stroke="#E8D5D8" stroke-width="2"/>
+  <circle cx="200" cy="200" r="60" fill="#F7E7EA"/>
+  <path d="M200 260 C200 260 150 220 150 180 C150 155 170 140 190 140 C205 140 200 160 200 160 C200 160 195 140 210 140 C230 140 250 155 250 180 C250 220 200 260 200 260Z" fill="#B76E79" opacity="0.4"/>
+  <text x="200" y="340" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#6B4E52" opacity="0.6">Replace with</text>
+  <text x="200" y="365" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#B76E79" opacity="0.7">memory-01.jpg</text>
+</svg>

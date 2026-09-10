@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=Caveat:wght@400;500;600&display=swap");
+
+:root {
+  --bg-warm: #fff9f5;
+  --bg-blush: #fcecef;
+  --bg-soft: #f7e7ea;
+  --bg-muted: #e8d5d8;
+  --accent-rose: #b76e79;
+  --text-dark: #6b4e52;
+  --text-light: #9a7b7f;
+  --white: #ffffff;
+
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-hand: "Caveat", cursive;
+
+  --shadow-soft: 0 8px 32px rgba(107, 78, 82, 0.08);
+  --shadow-book: 0 20px 60px rgba(107, 78, 82, 0.15);
+  --shadow-page: 0 4px 20px rgba(107, 78, 82, 0.1);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-soft: cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-warm);
+  color: var(--text-dark);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.app {
+  position: relative;
+  min-height: 100vh;
+}
+
+.section-label {
+  font-family: var(--font-hand);
+  font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+  color: var(--accent-rose);
+  opacity: 0.85;
+}
+
+.heading-serif {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--text-dark);
+}
+
+.heading-serif--hero {
+  font-size: clamp(2.2rem, 7vw, 4.5rem);
+}
+
+.heading-serif--large {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+}
+
+.heading-serif--medium {
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+}
+
+.body-text {
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 2.8vw, 1.1rem);
+  line-height: 1.7;
+  color: var(--text-light);
+  font-weight: 300;
+}
+
+.handwritten {
+  font-family: var(--font-hand);
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  color: var(--accent-rose);
+  line-height: 1.4;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem 2rem;
+  background: linear-gradient(135deg, var(--accent-rose), #c98892);
+  color: var(--white);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  border-radius: 100px;
+  box-shadow: 0 4px 20px rgba(183, 110, 121, 0.35);
+  transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s var(--ease-out-expo);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(183, 110, 121, 0.45);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.paper-texture {
+  background-color: var(--white);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

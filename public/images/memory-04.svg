@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" fill="none">
+  <rect width="300" height="400" fill="#FCECEF"/>
+  <rect x="15" y="20" width="270" height="360" rx="3" fill="#FFF" stroke="#E8D5D8" stroke-width="1.5"/>
+  <circle cx="150" cy="170" r="70" fill="#F7E7EA"/>
+  <text x="150" y="320" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#B76E79" opacity="0.7">memory-04.jpg</text>
+</svg>
