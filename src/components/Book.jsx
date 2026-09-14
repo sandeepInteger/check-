@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { memories } from "../data/memories";
+import { siteConfig } from "../data/siteConfig";
 import MemoryPage from "./MemoryPage";
 import { animatePageContent, resetPageContent } from "../utils/pageAnimations";
 
@@ -76,7 +77,7 @@ export default function Book({ active, onBookClosed }) {
         },
       });
 
-      gsap.from(".book__intro", {
+      gsap.from(".book__intro-wrap", {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 80%",
@@ -110,9 +111,15 @@ export default function Book({ active, onBookClosed }) {
   return (
     <section className="book-section" ref={sectionRef}>
       <div className="book__pin-wrapper">
-        <p className="book__intro heading-serif heading-serif--medium">
-          Our little story...
-        </p>
+        <div className="book__intro-wrap">
+          <p className="book__intro-kicker section-label">A story for</p>
+          <p className="book__intro heading-serif heading-serif--medium">
+            {siteConfig.fullName ?? siteConfig.girlfriendName}
+          </p>
+          <p className="book__intro-tagline body-text">
+            Smile, look, laugh — and everything in between.
+          </p>
+        </div>
 
         <div className="book__scene">
           <div className="book__wrapper" ref={bookRef}>

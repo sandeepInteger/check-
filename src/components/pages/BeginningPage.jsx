@@ -1,3 +1,5 @@
+import PortraitPhoto from "../PortraitPhoto";
+
 export default function BeginningPage({ memory }) {
   return (
     <div className="page-content page-content--beginning">
@@ -9,11 +11,12 @@ export default function BeginningPage({ memory }) {
       </p>
       <div className="page-content__photo-wrap page-animate page-animate--photo">
         <div className="page-content__photo-flash" />
-        <img
-          src={memory.image}
+        <PortraitPhoto
+          src={memory.imageSrc}
+          fallback={memory.imageFallback}
           alt="A cherished memory"
-          loading="lazy"
           className="page-content__photo"
+          cropClass={memory.cropClass}
         />
       </div>
       <p className="page-content__hand-note handwritten page-animate page-animate--note">

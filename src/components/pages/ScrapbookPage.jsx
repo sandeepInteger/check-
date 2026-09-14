@@ -1,3 +1,5 @@
+import PortraitPhoto from "../PortraitPhoto";
+
 export default function ScrapbookPage({ memory }) {
   return (
     <div className="page-content page-content--scrapbook">
@@ -16,7 +18,12 @@ export default function ScrapbookPage({ memory }) {
         {memory.date}
       </p>
       <div className="scrapbook__photo page-animate page-animate--photo">
-        <img src={memory.image} alt="First memory" loading="lazy" />
+        <PortraitPhoto
+          src={memory.imageSrc}
+          fallback={memory.imageFallback}
+          alt="First memory"
+          cropClass={memory.cropClass}
+        />
       </div>
       <h3 className="scrapbook__title heading-serif heading-serif--medium page-animate page-animate--title">
         {memory.title}

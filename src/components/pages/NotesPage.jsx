@@ -1,8 +1,15 @@
+import PortraitPhoto from "../PortraitPhoto";
+
 export default function NotesPage({ memory }) {
   return (
     <div className="page-content page-content--notes">
       <div className="notes__photo page-animate page-animate--photo">
-        <img src={memory.image} alt="Us" loading="lazy" />
+        <PortraitPhoto
+          src={memory.imageSrc}
+          fallback={memory.imageFallback}
+          alt="Shriya"
+          cropClass={memory.cropClass}
+        />
       </div>
       <h3 className="notes__title heading-serif heading-serif--medium page-animate page-animate--title">
         {memory.title}

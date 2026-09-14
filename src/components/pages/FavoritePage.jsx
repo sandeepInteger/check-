@@ -1,12 +1,15 @@
+import PortraitPhoto from "../PortraitPhoto";
+
 export default function FavoritePage({ memory }) {
   return (
     <div className="page-content page-content--favorite">
       <div className="favorite__photo-wrap page-animate page-animate--photo">
-        <img
-          src={memory.image}
+        <PortraitPhoto
+          src={memory.imageSrc}
+          fallback={memory.imageFallback}
           alt="Favorite memory"
-          loading="lazy"
           className="favorite__photo"
+          cropClass={memory.cropClass}
         />
       </div>
       <h3 className="favorite__title heading-serif heading-serif--medium page-animate page-animate--title">

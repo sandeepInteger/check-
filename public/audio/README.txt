@@ -1,9 +1,10 @@
-Add your audio files here:
+Audio files (replace anytime with your own MP3s):
 
-1. background-music.mp3  — Soft instrumental background track (loops)
-2. personal-song.mp3     — Your personalized song for the final gift
+1. background-music.mp3  — Loops while she scrolls (keep it soft / instrumental)
+2. personal-song.mp3     — Plays when she opens the final gift
 
-Update paths in src/data/siteConfig.js if you use different filenames.
+Current placeholders: royalty-free demo tracks from SoundHelix (free to use).
+Swap them for songs you own — e.g. soft piano instrumental for (1) and
+"Tum Hi Ho", "Perfect", or your song together for (2).
 
-Recommended: keep background music quiet (soft piano / acoustic).
-The personal song plays when she opens the final gift.
+Drop new files here with the same names, or change paths in src/data/siteConfig.js.

@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { siteConfig } from "../data/siteConfig";
 import GiftBox from "./GiftBox";
 import Particles from "./Particles";
+import PortraitPhoto from "./PortraitPhoto";
 
 export default function Hero({ onGiftOpened, onFirstInteraction }) {
   const sectionRef = useRef(null);
@@ -14,6 +15,21 @@ export default function Hero({ onGiftOpened, onFirstInteraction }) {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      gsap.from(".hero__portrait-ring", {
+        scale: 0.85,
+        opacity: 0,
+        duration: 1.1,
+        ease: "power3.out",
+        delay: 0.15,
+      });
+      gsap.from(".hero__beat", {
+        y: 12,
+        opacity: 0,
+        duration: 0.7,
+        stagger: 0.08,
+        ease: "power3.out",
+        delay: 0.45,
+      });
       gsap.from(".hero__greeting", {
         y: 40,
         opacity: 0,
@@ -125,7 +141,32 @@ export default function Hero({ onGiftOpened, onFirstInteraction }) {
       className={`hero ${scrollEnabled ? "hero--scrollable" : ""}`}
       ref={sectionRef}
     >
-      <Particles intensity={opened ? "medium" : "low"} className="hero__particles" />
+      <div className="hero__ambient" aria-hidden="true">
+        <span className="hero__orb hero__orb--1" />
+        <span className="hero__orb hero__orb--2" />
+        <span className="hero__orb hero__orb--3" />
+      </div>
+
+      <Particles intensity={opened ? "high" : "medium"} className="hero__particles" />
+
+      <div className="hero__portrait-ring">
+        <PortraitPhoto
+          src={siteConfig.photos.hero}
+          fallback="/images/memory-01.svg"
+          alt={siteConfig.fullName ?? siteConfig.girlfriendName}
+          className="hero__portrait"
+          cropClass="photo-crop--center"
+          loading="eager"
+        />
+      </div>
+
+      <ul className="hero__beats" aria-label="Story highlights">
+        {siteConfig.storyBeats.map((beat) => (
+          <li key={beat} className="hero__beat handwritten">
+            {beat}
+          </li>
+        ))}
+      </ul>
 
       <div className="hero__content">
         <p className="hero__greeting heading-serif heading-serif--hero">
@@ -153,10 +194,10 @@ export default function Hero({ onGiftOpened, onFirstInteraction }) {
 
       <div className="hero__reveal" ref={revealRef} style={{ display: "none" }}>
         <h2 className="hero__reveal-title heading-serif heading-serif--hero">
-          Happy Birthday, {siteConfig.girlfriendName} ❤️
+          Happy Birthday, {siteConfig.fullName ?? siteConfig.girlfriendName} ❤️
         </h2>
         <p className="hero__reveal-sub body-text">
-          Your little story starts here...
+          Turn the page — your story is waiting.
         </p>
       </div>
 

@@ -1,13 +1,20 @@
+import PortraitPhoto from "../PortraitPhoto";
+
 export default function CollagePage({ memory }) {
   return (
     <div className="page-content page-content--collage">
       <div className="collage__photos">
-        {memory.images.map((src, i) => (
+        {memory.images.map((item, i) => (
           <div
-            key={src}
+            key={item.src ?? item.fallback ?? i}
             className={`collage__photo collage__photo--${i + 1} page-animate page-animate--photo-${i}`}
           >
-            <img src={src} alt={`Memory ${i + 1}`} loading="lazy" />
+            <PortraitPhoto
+              src={item.src}
+              fallback={item.fallback}
+              alt={`Memory ${i + 1}`}
+              cropClass={item.cropClass}
+            />
           </div>
         ))}
       </div>

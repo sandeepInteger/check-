@@ -16,7 +16,7 @@ export default function Particles({ intensity = "low", className = "" }) {
     const container = containerRef.current;
     if (!container) return;
 
-    const count = intensity === "high" ? 24 : intensity === "medium" ? 16 : 10;
+    const count = intensity === "high" ? 28 : intensity === "medium" ? 18 : 12;
     const particles = [];
 
     for (let i = 0; i < count; i++) {

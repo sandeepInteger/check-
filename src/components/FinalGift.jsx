@@ -131,7 +131,7 @@ export default function FinalGift({
 
             <div className="final-gift__message">
               <h2 className="heading-serif heading-serif--hero">
-                Happy Birthday, {siteConfig.girlfriendName} ❤️
+                Happy Birthday, {siteConfig.fullName ?? siteConfig.girlfriendName} ❤️
               </h2>
               <p className="body-text final-gift__final-msg">
                 {siteConfig.finalMessage.split("\n").map((line, i) => (
@@ -142,7 +142,7 @@ export default function FinalGift({
                 ))}
               </p>
               <p className="final-gift__signature handwritten">
-                — {siteConfig.boyfriendName}
+                — {siteConfig.signOff}
               </p>
               <p className="final-gift__footer body-text">
                 Made with ❤️, just for you.

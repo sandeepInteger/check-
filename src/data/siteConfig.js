@@ -1,18 +1,29 @@
-export const siteConfig = {
-  girlfriendName: "HER NAME",
-  boyfriendName: "HIS NAME",
+import { userPhotos } from "./photos";
 
-  heroMessage: "I made something a little special for you.",
-  heroSubMessage: "Because today deserves more than just a Happy Birthday ❤️",
+export const siteConfig = {
+  girlfriendName: "Shriya",
+  fullName: "Shriya Jamwal",
+  /** Shown on the final page — change to your name if you like */
+  signOff: "Someone who never stops smiling because of you",
+
+  heroMessage: "I made you a little story — one scroll at a time.",
+  heroSubMessage:
+    "Because Shriya Jamwal deserves more than a plain message on a special day.",
+
+  storyBeats: ["That smile", "That look", "That laugh", "That you"],
+
+  photos: {
+    hero: userPhotos.one,
+  },
 
   finalMessage:
-    "Here's to all the memories we've made,\nand all the ones still waiting for us.",
+    "Here's to your smile that lights up rooms,\nthe look in your eyes that feels like home,\nand every chapter we're still writing together.",
 
   backgroundMusic: "/audio/background-music.mp3",
   personalSong: "/audio/personal-song.mp3",
 
-  backgroundMusicLabel: "Our Little Song",
-  personalSongTitle: "Our Song",
-  personalSongSubtitle: "Made just for you ❤️",
-  personalSongDuration: "03:42",
+  backgroundMusicLabel: "Soft background",
+  personalSongTitle: "For Shriya",
+  personalSongSubtitle: "Open your final gift ♥",
+  personalSongDuration: "",
 };
