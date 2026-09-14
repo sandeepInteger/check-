@@ -9,4 +9,6 @@ export const userPhotos = {
   three: publicImage("Media (3).jfif"),
   four: publicImage("Media (4).jfif"),
   five: publicImage("Media (5).jfif"),
+  /** Hero-style main portrait — replace public/images/MainImage.png anytime */
+  main: publicImage("MainImage.png"),
 };

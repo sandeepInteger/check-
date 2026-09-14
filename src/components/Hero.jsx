@@ -5,7 +5,7 @@ import GiftBox from "./GiftBox";
 import Particles from "./Particles";
 import PortraitPhoto from "./PortraitPhoto";
 
-export default function Hero({ onGiftOpened, onFirstInteraction }) {
+export default function Hero({ onGiftOpened }) {
   const sectionRef = useRef(null);
   const giftRef = useRef(null);
   const revealRef = useRef(null);
@@ -81,14 +81,12 @@ export default function Hero({ onGiftOpened, onFirstInteraction }) {
 
   const handleOpenGift = () => {
     if (opening || opened) return;
-    onFirstInteraction?.();
     setOpening(true);
 
     gsap.to(".hero__open-btn", {
       opacity: 0,
       y: 10,
       duration: 0.4,
-      onComplete: () => setOpening(true),
     });
 
     giftRef.current?.open();
@@ -147,7 +145,7 @@ export default function Hero({ onGiftOpened, onFirstInteraction }) {
         <span className="hero__orb hero__orb--3" />
       </div>
 
-      <Particles intensity={opened ? "high" : "medium"} className="hero__particles" />
+      <Particles intensity={opened ? "medium" : "low"} className="hero__particles" />
 
       <div className="hero__portrait-ring">
         <PortraitPhoto

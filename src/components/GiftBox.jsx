@@ -64,7 +64,7 @@ const GiftBox = forwardRef(function GiftBox(
         <div className="gift-box__base" />
         {variant === "final" && (
           <div className="gift-box__music-note" aria-hidden="true">
-            ♫
+            ♥
           </div>
         )}
       </div>

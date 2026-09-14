@@ -3,20 +3,12 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { siteConfig } from "../data/siteConfig";
 import GiftBox from "./GiftBox";
-import MusicPlayer from "./MusicPlayer";
 import Particles from "./Particles";
+import PortraitPhoto from "./PortraitPhoto";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function FinalGift({
-  active,
-  songPlaying,
-  songTime,
-  songDuration,
-  onSongToggle,
-  onSongSeek,
-  playerVisible,
-}) {
+export default function FinalGift({ active }) {
   const sectionRef = useRef(null);
   const giftRef = useRef(null);
   const [opened, setOpened] = useState(false);
@@ -68,20 +60,12 @@ export default function FinalGift({
   const handleOpenComplete = () => {
     setOpened(true);
 
-    gsap.from(".final-gift__player-area", {
-      opacity: 0,
-      y: 30,
-      duration: 1,
-      ease: "power3.out",
-      delay: 0.3,
-    });
-
     gsap.from(".final-gift__message", {
       opacity: 0,
-      y: 20,
-      duration: 0.8,
+      y: 24,
+      duration: 1,
       ease: "power3.out",
-      delay: 0.8,
+      delay: 0.35,
     });
   };
 
@@ -96,7 +80,7 @@ export default function FinalGift({
           One last thing...
         </p>
         <p className="final-gift__sub body-text">
-          A little song, made just for you.
+          A few words, saved for the end.
         </p>
 
         {!opened && (
@@ -119,35 +103,33 @@ export default function FinalGift({
         )}
 
         {opened && (
-          <div className="final-gift__player-area">
-            <MusicPlayer
-              visible={playerVisible}
-              isPlaying={songPlaying}
-              currentTime={songTime}
-              duration={songDuration}
-              onToggle={onSongToggle}
-              onSeek={onSongSeek}
-            />
-
-            <div className="final-gift__message">
-              <h2 className="heading-serif heading-serif--hero">
-                Happy Birthday, {siteConfig.fullName ?? siteConfig.girlfriendName} ❤️
-              </h2>
-              <p className="body-text final-gift__final-msg">
-                {siteConfig.finalMessage.split("\n").map((line, i) => (
-                  <span key={i}>
-                    {line}
-                    {i === 0 && <br />}
-                  </span>
-                ))}
-              </p>
-              <p className="final-gift__signature handwritten">
-                — {siteConfig.signOff}
-              </p>
-              <p className="final-gift__footer body-text">
-                Made with ❤️, just for you.
-              </p>
+          <div className="final-gift__message">
+            <div className="final-gift__main-photo-wrap">
+              <PortraitPhoto
+                src={siteConfig.photos.main}
+                fallback="/images/memory-01.svg"
+                alt={siteConfig.fullName ?? siteConfig.girlfriendName}
+                className="final-gift__main-photo"
+                cropClass="photo-crop--center"
+              />
             </div>
+            <h2 className="heading-serif heading-serif--hero">
+              Happy Birthday, {siteConfig.fullName ?? siteConfig.girlfriendName} ❤️
+            </h2>
+            <p className="body-text final-gift__final-msg">
+              {siteConfig.finalMessage.split("\n").map((line, i) => (
+                <span key={i}>
+                  {line}
+                  {i === 0 && <br />}
+                </span>
+              ))}
+            </p>
+            <p className="final-gift__signature handwritten">
+              — {siteConfig.signOff}
+            </p>
+            <p className="final-gift__footer body-text">
+              Made with ❤️, just for you.
+            </p>
           </div>
         )}
       </div>
